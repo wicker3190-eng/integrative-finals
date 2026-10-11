@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Browse</title>
+  </head>
+  <body>
+    <div class="toolbar">
+      <a class="toolbar-content" style="text-decoration:none" href="index.html">Home</a>
+      <div class="dropdown" id="browseDropdown">
+        <p class="toolbar-content dropdown-toggle" id="browseToggle" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></p>
+        <div class="dropdown-menu" id="browseMenu">
+          <a href="browse.html?type=anime">Anime</a>
+          <a href="browse.html?type=manga">Manga</a>
+        </div>
+      </div>
+    </div>
+    <div class="design-line"></div>
+    <div class="design-line-filler"></div>
+
+    <div class="browse-page">
+      <h1 class="HomeTitle browse-title" id="browseTitle">Browse</h1>
+      <p class="browse-status" id="browseStatus">Loading…</p>
+      <div class="browse-grid" id="browseGrid"></div>
+      <button class="browse-more" id="browseMore" hidden>Load more</button>
+    </div>
+
+    <script src="nav.js"></script>
+    <script src="browse.js"></script>
+  </body>
+</html>

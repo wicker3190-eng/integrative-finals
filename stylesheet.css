@@ -1,0 +1,249 @@
+body {
+  background: #b8b7b7;
+  font-family: sans-serif;
+}
+ 
+/* ── Toolbar ── */
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: #dbdbdb;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+ 
+.toolbar-content {
+  color: #000000;
+  padding: 15px;
+  cursor: pointer;
+}
+ 
+/* ── Decorative lines ── */
+.design-line {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #656bb0;
+  z-index: 999;
+}
+ 
+.design-line2 {
+  height: 5px;
+  background: #656bb0;
+  margin-top: 20px;
+}
+ 
+.design-line-filler {
+  height: 40px;
+  background: #000000;
+  z-index: 998;
+  margin-bottom: 50px;
+}
+ 
+/* ── General ── */
+.content {
+  margin-top: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: px;
+}
+ 
+.font-style {
+  color: #000000;
+  margin-left: 35px;
+}
+ 
+.HomeTitle {
+  color: #000000;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-left: 21px;
+}
+ 
+.tab  { margin-left: 30px; }
+.tab2 { margin-left: 50px; }
+ 
+/* ── Section boxes ── */
+.exp-border,
+.skills-border,
+.contact-border {
+  background: #dfdfdf;
+  border: 3px solid #656bb0;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 15px;
+  margin: 20px 30px;
+}
+ 
+.contact-border { margin-bottom: 30px; }
+ 
+/* ── Projects section ── */
+.page-section {
+  margin: 24px 20px 0;
+}
+ 
+.block-heading {
+  text-align: left;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+ 
+/* ── Carousel wrapper ── */
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+ 
+/* ── Carousel main (track + buttons) ── */
+.carousel-main {
+  position: relative;
+  width: 1000px;      /* 5 slides x 200px */
+  max-width: calc(100% - 80px);
+  margin: 0 auto;     /* centered */
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* ── Individual slide ── */
+.carousel-slide {
+  flex: 0 0 20%;      /* 5 visible at a time */
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0 8px;
+  aspect-ratio: 2 / 3;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* the two slides on the left/right edges fade out; the 3 in the middle are untouched */
+.carousel-slide.edge {
+  opacity: 0.3;
+  transform: scale(0.93);
+}
+.carousel-track.snap .carousel-slide { transition: none; }
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #dfdfdf;
+  border: 3px solid #656bb0;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+ 
+/* ── Prev / Next buttons ── */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #656bb0;
+  background: #dfdfdf;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.carousel-btn:hover { background: #c8c8f0; }
+.carousel-btn.prev  { left:  -20px; }
+.carousel-btn.next  { right: -20px; }
+ 
+/* ── Dots ── */
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+ 
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #656bb0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+ 
+.dot.active { background: #656bb0; }
+
+/* ── Browse dropdown ── */
+.dropdown { position: relative; }
+.dropdown-toggle { user-select: none; }
+.caret {
+  display: inline-block;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #000;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  padding: 6px 0;
+  z-index: 1100;
+}
+.dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block;
+  padding: 8px 20px;
+  color: #333;
+  text-decoration: none;
+}
+.dropdown-menu a:hover { background: #eceefa; }
+
+/* ── Browse page ── */
+.browse-page { padding: 0 30px 40px; }
+.browse-title { text-transform: capitalize; }
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+.browse-card {
+  background: #dfdfdf;
+  border: 3px solid #656bb0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.browse-card img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; display: block; background: #bbb; }
+.browse-card .info { padding: 8px 10px; font-size: 14px; }
+.browse-card .info small { color: #555; }
+.browse-status { margin: 20px 0; }
+.browse-more {
+  display: block; margin: 24px auto 0; padding: 10px 24px;
+  border: 2px solid #656bb0; border-radius: 8px; background: #dfdfdf; cursor: pointer; font-size: 15px;
+}
+.browse-more:hover { background: #c8c8f0; }

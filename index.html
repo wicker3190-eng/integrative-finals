@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Portfolio</title>
+  </head>
+ 
+  <body>
+ 
+    <div class="toolbar">
+      <div class="dropdown" id="browseDropdown">
+        <p class="toolbar-content dropdown-toggle" id="browseToggle" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></p>
+        <div class="dropdown-menu" id="browseMenu">
+          <a href="browse.html?type=anime">Anime</a>
+          <a href="browse.html?type=manga">Manga</a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="design-line"></div>
+    <div class="design-line-filler"></div>
+ 
+    <div id="home"></div>
+
+    <h2 class="block-heading">Trending Now</h2>
+
+    <section id="projects" class="page-section">
+      <div class="container">
+
+        <div class="carousel-wrapper">
+          <div class="carousel-main">
+            <div class="carousel-track-container">
+              <div class="carousel-track" id="carouselTrack">
+ 
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+ 
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+ 
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+ 
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+ 
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+ 
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+
+                <div class="carousel-slide">
+                  <img src="" alt="" class="slide-img">
+                </div>
+ 
+              </div>
+            </div>
+            <button class="carousel-btn prev" id="prevBtn">&#8249;</button>
+            <button class="carousel-btn next" id="nextBtn">&#8250;</button>
+          </div>
+ 
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </div>
+    </section>
+ 
+    <div class="design-line2"></div>
+ 
+    <div id="experience" class="exp-border">
+      <p>,</p><br>
+      <p>,</p><br>
+      <p>,</p><br>
+      <p>,</p><br>
+      <p>,</p><br>
+      <p>,</p><br>
+      <p>,</p><br>
+      <p>,</p><br>
+
+    </div>
+ 
+    <div id="skills" class="skills-border">
+      
+    </div>
+ 
+    <div id="contact" class="contact-border">
+      
+    </div>
+ 
+    <script>
+      function goto(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const toolbarHeight = 100;
+        const top = el.getBoundingClientRect().top + window.scrollY - toolbarHeight - 10;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    </script>
+ 
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+ 
+  </body>
+</html>
